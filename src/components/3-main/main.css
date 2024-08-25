@@ -54,7 +54,6 @@ main section.right-section.flex {
   flex-grow: 1;
   justify-content: center;
   flex-wrap: wrap;
-
   column-gap: 16px;
   row-gap: 2rem;
 }
@@ -77,13 +76,15 @@ main section.right-section.flex {
 
 .card:hover {
   border: 1px solid var(--blue);
-  /* background-color: rgba(246, 246, 246); */
   rotate: 1deg;
   scale: 1.01;
   cursor: pointer;
 }
 
 .card img {
+  width: 266px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 5px;
 }
 

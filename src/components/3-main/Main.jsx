@@ -35,15 +35,6 @@ const Main = () => {
 
         <button
           onClick={() => {
-            handleClick("css");
-          }}
-          className={currentActive === "css" ? "active" : null}
-        >
-          HTML & CSS
-        </button>
-
-        <button
-          onClick={() => {
             handleClick("js");
           }}
           className={currentActive === "js" ? "active" : null}
@@ -56,29 +47,27 @@ const Main = () => {
           }}
           className={currentActive === "react" ? "active" : null}
         >
-          React & MUI
+          React
         </button>
+
         <button
           onClick={() => {
-            handleClick("node");
+            handleClick("python");
           }}
-          className={currentActive === "node" ? "active" : null}
+          className={currentActive === "python" ? "active" : null}
         >
-          Node & Express
+          Python
         </button>
       </section>
       <section id="projects" className=" flex right-section">
         {arr.map((item) => {
           return (
-            <article key={item.imgPath} className="  card">
+            <article className="card">
               <img width={266} src={item.imgPath} alt="" />
 
               <div style={{ width: "266px" }} className="box">
                 <h1 className="title">{item.projectTitle}</h1>
-                <p className="sub-title">
-                  Lorem ipsum dolor sit amet consectetur elit adipisicing . Ex
-                  tempore dolor in, accusantium laudantium accusamus.
-                </p>
+                <p className="sub-title">{item.subtitle}</p>
 
                 <div className="flex icons">
                   <div style={{ gap: "11px" }} className="flex">
@@ -111,5 +100,3 @@ const Main = () => {
 };
 
 export default Main;
-
-

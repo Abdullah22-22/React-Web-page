@@ -1,6 +1,3 @@
-
-
-
 import "./contact.css";
 import { useForm, ValidationError } from "@formspree/react";
 import Lottie from "lottie-react";
@@ -70,4 +67,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -3,14 +3,14 @@ import Lottie from "lottie-react";
 import devAnimation from "../../animtion/dev.json";
 const Hero = () => {
   return (
-    <section className="hero flex">
+    <section id="hero-section" className="hero flex">
       <div className="left-section  ">
         <div className="parent-avatar flex">
           <img src="./Abdullah.jpeg" className="avatar" alt="" />
           <div className="icon-verified"></div>
         </div>
 
-        <h1 className="title">Software designer,</h1>
+        <h1 className="title">Developer</h1>
         <p className="sub-title">
           I’m Abdullah Al_Tmeemi, a student i live Helsnki
         </p>
@@ -33,16 +33,16 @@ const Hero = () => {
       </div>
 
       <div className="right-section animation">
-        { <Lottie
-          className="contact-animation"
-          style={{ height: 355 }}
-          animationData={devAnimation}
-        /> }
+        {
+          <Lottie
+            className="contact-animation"
+            style={{ height: 355 }}
+            animationData={devAnimation}
+          />
+        }
       </div>
     </section>
   );
 };
 
 export default Hero;
-
-

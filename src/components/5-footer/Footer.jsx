@@ -1,27 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.css";
+
 const Footer = () => {
   return (
     <footer className="flex">
       <ul className="flex">
+       
         <li>
-          <a href="">About</a>
+          <Link to="/cv">CV</Link>
         </li>
         <li>
-          <a href="">Projects</a>
+          <Link to="/projects">Projects</Link>
         </li>
         <li>
-          <a href="">Speaking</a>
+          <Link to="/contact">contact</Link>
         </li>
-        <li>
-          <a href="">Uses</a>
-        </li>
+       
       </ul>
 
-      <p>© 2023 Spencer Sharp. All rights reserved.</p>
+      <p> 2024 Abdullah Al-Tameemi</p>
     </footer>
   );
 };
 
 export default Footer;
-

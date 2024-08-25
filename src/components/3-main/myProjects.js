@@ -1,45 +1,21 @@
 export const myProjects = [
-    {
-      projectTitle: "react project",
-      category: ["react"],
-      imgPath: "./images/1.jpg",
-    },
-    {
-      projectTitle: "react & css project",
-      category: ["react", "css"],
-      imgPath: "./images/2.jpg",
-    },
-    { projectTitle: "css project", category: ["css"], imgPath: "./images/3.jpg" },
-    {
-      projectTitle: "react project",
-      category: ["react"],
-      imgPath: "./images/4.jpg",
-    },
-    { projectTitle: "css project", category: ["css"], imgPath: "./images/5.jpg" },
-  
-    {
-      projectTitle: "javaScript project",
-      category: ["js"],
-      imgPath: "./images/6.jpg",
-    },
-    {
-      projectTitle: "node project",
-      category: ["node"],
-      imgPath: "./images/7.jpg",
-    },
-    {
-      projectTitle: "node project",
-      category: ["node"],
-      imgPath: "./images/8.jpg",
-    },
-    {
-      projectTitle: "javaScript project",
-      category: ["js"],
-      imgPath: "./images/9.jpg",
-    },
+   
     {projectTitle: "CRUD",
     category: ["js"],
     imgPath: "./images/crud.jpg",
+    subtitle: "Wep  app for managing data",
     githubLink: "https://github.com/Abdullah22-22/crud"
+  },
+  {projectTitle: "Python",
+    category: ["python"],
+    imgPath: "./images/python.jpg",
+    subtitle: "Some  python code",
+    githubLink: "https://github.com/Abdullah22-22/Python"
+  },
+  {projectTitle: "MY web page",
+    category: ["react"],
+    imgPath: "./images/myprotfolio.png",
+    subtitle: "web page by using (react,html.css,animtion)",
+    githubLink: ""
   }
   ];

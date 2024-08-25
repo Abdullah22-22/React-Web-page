@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./header.css";
 
@@ -6,6 +7,7 @@ const Header = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("currentMode") ?? "dark"
   );
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (theme === "light") {
@@ -16,9 +18,20 @@ const Header = () => {
       document.body.classList.add("dark");
     }
   }, [theme]);
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 70,
+        behavior: 'smooth'
+      });
+      setshowModal(false); 
+    }
+  };
+  
 
   return (
-    <header className="  flex">
+    <header className="flex">
       <button
         onClick={() => {
           setshowModal(true);
@@ -32,30 +45,27 @@ const Header = () => {
       <nav>
         <ul className="flex">
           <li>
-            <a href="">CV</a>
-          </li>
-
-          <li>
-            <a href="#projects">Projects</a>
+            <Link to="/" onClick={() => setshowModal(false)}>Home</Link>
           </li>
           <li>
-            <a href="">Speaking</a>
+            <Link to="/cv" onClick={() => setshowModal(false)}>CV</Link>
           </li>
           <li>
-            <a href="#contact-section">Contact</a>
+            <Link to="/projects" onClick={() => setshowModal(false)}>Projects</Link>
+          </li>
+       
+          <li>
+          <Link to="/contact" onClick={() => setshowModal(false)}>contact</Link>
           </li>
         </ul>
       </nav>
 
       <button
         onClick={() => {
-          // Send value to LS
           localStorage.setItem(
             "currentMode",
             theme === "dark" ? "light" : "dark"
           );
-
-          // get value from LS
           setTheme(localStorage.getItem("currentMode"));
         }}
         className="mode flex"
@@ -69,30 +79,25 @@ const Header = () => {
 
       {showModal && (
         <div className="fixed">
-          <ul className="modal ">
+          <ul className="modal">
             <li>
               <button
                 className="icon-close"
-                onClick={() => {
-                  setshowModal(false);
-                }}
+                onClick={() => setshowModal(false)}
               />
             </li>
             <li>
-              <a href="">CV</a>
-            </li>
-
-            <li>
-              <a href="#projects">Projects</a>
+              <Link to="/" onClick={() => setshowModal(false)}>Home</Link>
             </li>
             <li>
-              <a href="">Speaking</a>
+              <Link to="/cv" onClick={() => setshowModal(false)}>CV</Link>
             </li>
             <li>
-              <a href="">Uses</a>
+              <Link to="/projects" onClick={() => setshowModal(false)}>Projects</Link>
             </li>
+           
             <li>
-              <a href="#contact-section">Contact</a>
+            <Link to="/contact" onClick={() => setshowModal(false)}>contact</Link>
             </li>
           </ul>
         </div>
@@ -102,5 +107,4 @@ const Header = () => {
 };
 
 export default Header;
-
 

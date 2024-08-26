@@ -1,16 +1,33 @@
 import "./hero.css";
 import Lottie from "lottie-react";
 import devAnimation from "../../animtion/dev.json";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section id="hero-section" className="hero flex">
       <div className="left-section  ">
         <div className="parent-avatar flex">
-          <img src="./Abdullah.jpeg" className="avatar" alt="" />
+          <motion.img
+            initial={{ transform: "scale(0)" }}
+            animate={{ transform: "scale(1.1)" }}
+            transition={{ damping: 6, type: "spring", stiffness: 100 }}
+            src="./Abdullah.jpeg"
+            className="avatar"
+            alt=""
+          />
           <div className="icon-verified"></div>
         </div>
 
-        <h1 className="title">Developer</h1>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="title"
+        >
+          Developer
+        </motion.h1>
+
         <p className="sub-title">
           I’m Abdullah Al_Tmeemi, a student i live Helsnki
         </p>

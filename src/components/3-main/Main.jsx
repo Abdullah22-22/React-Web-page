@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./main.css";
 import { myProjects } from "./myProjects";
+import { AnimatePresence, motion } from "framer-motion"
 
 const Main = () => {
   const [currentActive, setcurrentActive] = useState("all");
@@ -60,9 +61,16 @@ const Main = () => {
         </button>
       </section>
       <section id="projects" className=" flex right-section">
+      <AnimatePresence>
         {arr.map((item) => {
           return (
-            <article className="card">
+            <motion.article
+            layout
+                initial={{ transform: "scale(0.4)" }}
+                animate={{ transform: "scale(1)" }}
+                transition={{ type: "spring", damping: 8, stiffness: 50 }}
+                key={item.imgPath}
+            className="card" >
               <img width={266} src={item.imgPath} alt="" />
 
               <div style={{ width: "266px" }} className="box">
@@ -91,9 +99,10 @@ const Main = () => {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article >
           );
         })}
+        </AnimatePresence>
       </section>
     </main>
   );
